@@ -1,64 +1,68 @@
-import { useState, useRef } from "react";
-import { useOnClickOutside } from "./useOnClickOutside";
-const Navbar = () => {
-  const [dropdown, setDropdown] = useState(false);
-  const ref = useRef();
-  
-  useOnClickOutside(ref, dropdown, () => setDropdown(false));
-  return (
-    <nav>
-    <ul>
-      <li>Home</li>
-      <li>About</li>
-      <li ref={ref}>
-      <button onClick={() => setDropdown(!dropdown)}>
-          Services <span>&#8595;</span>
-        </button>
-        {dropdown && (
-          <ul>
-            <li>Design</li>
-            <li>Development</li>
-          </ul>
-        )}
-      </li>
-    </ul>
-  </nav>
-  );
-};
-export default Navbar;
+import React from 'react';
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAuthContext } from '@/context/AuthContext';
 
-/* import { useState, useEffect, useRef } from "react";
 const Navbar = () => {
-  const [dropdown, setDropdown] = useState(false);
-  const ref = useRef();
-  
-  useEffect(() => {
-    const handler = (event) => {
-      if (dropdown && ref.current && !ref.current.contains(event.target)) {
-        setDropdown(false);
-      }
-    };
-    document.removeEventListener("mousedown", handler);
-  }, [dropdown]);
+  const { user, logout } = useAuthContext();
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
+
+  const links = [
+    { path: '/', text: 'Home' },
+    { path: '/about', text: 'About' },
+    { path: '/profile', text: 'Profile' },
+    { path: '/login', text: 'Login' },
+  ];
 
   return (
-    <nav>
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li ref={ref}>
-        <button onClick={() => setDropdown(!dropdown)}>
-            Services <span>&#8595;</span>
-          </button>
-          {dropdown && (
-            <ul>
-              <li>Design</li>
-              <li>Development</li>
-            </ul>
+    <>
+  <nav className="navbar">
+  <ul>
+    {links.map((link) => {
+      return (
+        <React.Fragment key={link.text}>
+          {link.path === '/login' ? (
+            !user && (
+              <li>
+                <NavLink to={link.path}>{link.text}</NavLink>
+              </li>
+            )
+          ) : link.path === '/profile' ? (
+            user && (
+              <li>
+                <NavLink to={link.path}>
+                  {link.text}
+                </NavLink>
+              </li>
+            )
+          ) : (
+            <li>
+              <NavLink to={link.path}>{link.text}</NavLink>
+            </li>
           )}
-        </li>
-      </ul>
-    </nav>
+        </React.Fragment>
+      );
+    })}
+        {!user && (
+      <li className="log-in">
+        <span>Log in to edit to-dos</span>
+      </li>
+    )}
+  </ul>
+</nav>
+      {user && (
+        <div className="logout">
+          <p>{user}</p>
+          <button onClick={handleLogout}>Logout</button>
+        </div>
+      )}
+    </>
   );
 };
-export default Navbar; */
+
+export default Navbar;
