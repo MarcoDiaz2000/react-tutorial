@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const NotMatch = () => {
@@ -8,6 +9,7 @@ const NotMatch = () => {
 
   return null;
 };
+
 export default NotMatch;
 
 /*  const NotMatch = () => {
