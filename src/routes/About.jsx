@@ -1,8 +1,12 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import Header from '@/components/Header';
+
 const About = () => {
   return (
     <>
-      <h1>About page.</h1>
+      <Header>
+        <h1>About page.</h1>
+      </Header>
       <div className="about">
         <ul className="about_list">
           <li>
