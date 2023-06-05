@@ -7,6 +7,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -23,15 +24,11 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Math Magicians] <a name="about-project"></a>
+# 📖 [React tutorial] <a name="about-project"></a>
 
 **[Description]**
 
-"Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:
-
-Make simple calculations.
-Read a random math-related quote.
-By building this application, you will learn how to use React.
+In this exercise, I consolidated my knowledge about React, components, props, state, and hooks, by following a tutorial.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -43,18 +40,23 @@ HTML, CSS & JAVASCRIPT
 
 GitHub & Visual Studio Code
 
-React
+React and Vite
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-- Make simple calculations.
-- Read a random math-related quote.
+- Use JavaScript events.
+- Use React life cycle methods.
+- Understand the mechanism of lifting state up.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://marcodiaz2000.github.io/react-tutorial/)
 
 <!-- GETTING STARTED -->
 
@@ -156,10 +158,7 @@ You can deploy this project using:
 
  ## 🔭 Future Features
 
-- Add the functionality for the app.🚀
-- Add the testing using react testing library💯
-- Add the final touches for the styling👌
-
+- Improved styling and functionality 🚀
 
 <!-- CONTRIBUTING -->
 
@@ -183,7 +182,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> I would like to thank Microverse.
+> I would like to thank Ibas Majeed for providing the tutorial and documentation to develop this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
