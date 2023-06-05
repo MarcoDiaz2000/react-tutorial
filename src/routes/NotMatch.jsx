@@ -1,9 +1,13 @@
-import { Redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const NotMatch = () => {
-  return <Redirect to="/" />
-};
+  let navigate = useNavigate();
+  useEffect(() => {
+    navigate('/');
+  }, [navigate]);
 
+  return null;
+};
 export default NotMatch;
 
 /* const NotMatch = () => {
