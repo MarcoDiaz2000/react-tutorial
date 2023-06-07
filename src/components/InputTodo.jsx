@@ -3,7 +3,6 @@ import '@/styles/app.css';
 import { FaPlusCircle } from "react-icons/fa"
 import { IconContext } from "react-icons"
 
-
 const InputTodo = ({ addTodoItem }) => {
   const [title, setTitle] = useState('');
   const [message, setMessage] = useState('');
